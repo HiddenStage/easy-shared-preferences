@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">EasySharedPreferencesSample</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="integer_">Integer:</string>
+    <string name="boolean_">Boolean:</string>
+    <string name="string_">String:</string>
+    <string name="float_">Float:</string>
+    <string name="long_">Long:</string>
+
+</resources>
