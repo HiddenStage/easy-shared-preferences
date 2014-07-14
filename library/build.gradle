@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "com.hiddenstage.easysharedpreferences.library"
         minSdkVersion 11
-        targetSdkVersion 19
+        targetSdkVersion 18
         versionCode 1
         versionName "1.0"
     }
@@ -17,4 +17,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    lintOptions {
+        abortOnError false
+    }
 }
+
+apply from: 'https://raw.github.com/6thSigma/gradle-mvn-push/master/gradle-mvn-push.gradle'
