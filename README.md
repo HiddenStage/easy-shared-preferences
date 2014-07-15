@@ -1,7 +1,7 @@
 easy-shared-preferences
 ===========
 
-easy-shared-preferences is an Android library that makes using SharedPreferences as easy as standard getters and setters. No need to mess with .edit() and .apply() anymore.
+easy-shared-preferences is an Android library that makes using SharedPreferences as easy as standard getters and setters. No need to mess with .edit(), .commit(), or .apply() anymore.
 
 ```java
 public class YourActivity extends Activity {
