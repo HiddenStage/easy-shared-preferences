@@ -37,14 +37,6 @@ String string_variable = prefs.getString("sp_string_b", "string!");
 ```
 See examples for all data types in the sample application.
 #Download
-Maven:
-```java
-<dependency>
-    <groupId>com.hiddenstage.easysharedpreferences</groupId>
-    <artifactId>library</artifactId>
-    <version>0.1.1</version>
-</dependency>
-```
 Gradle:
 ```java
 compile 'com.hiddenstage.easysharedpreferences:library:0.1.1'
