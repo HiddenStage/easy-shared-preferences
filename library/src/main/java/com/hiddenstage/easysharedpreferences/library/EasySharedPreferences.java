@@ -2,8 +2,10 @@ package com.hiddenstage.easysharedpreferences.library;
 
 // Copyright 2014 HiddenStage
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.preference.PreferenceManager;
 
 import java.util.Map;
@@ -61,6 +63,7 @@ public class EasySharedPreferences {
         return mSharedPreferences.getLong(key, DefaultValues.LONG);
     }
 
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public Set<String> getStringSet(String key, Set<String> defaultValue) {
         return mSharedPreferences.getStringSet(key, defaultValue);
     }
@@ -72,52 +75,68 @@ public class EasySharedPreferences {
     public void putInt(String key, int value) {
         final SharedPreferences.Editor editor = mSharedPreferences.edit();
         editor.putInt(key, value);
-        editor.apply();
+        // save changes
+        save(editor);
     }
 
     public void putBoolean(String key, boolean value) {
         final SharedPreferences.Editor editor = mSharedPreferences.edit();
         editor.putBoolean(key, value);
-        editor.apply();
+        // save changes
+        save(editor);
     }
 
     public void putString(String key, String value) {
         final SharedPreferences.Editor editor = mSharedPreferences.edit();
         editor.putString(key, value);
-        editor.apply();
+        // save changes
+        save(editor);
     }
 
     public void putFloat(String key, float value) {
         final SharedPreferences.Editor editor = mSharedPreferences.edit();
         editor.putFloat(key, value);
-        editor.apply();
+        // save changes
+        save(editor);
     }
 
     public void putLong(String key, long value) {
         final SharedPreferences.Editor editor = mSharedPreferences.edit();
         editor.putLong(key, value);
-        editor.apply();
+        // save changes
+        save(editor);
     }
-
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     public void putStringSet(String key, Set<String> value) {
         final SharedPreferences.Editor editor = mSharedPreferences.edit();
         editor.putStringSet(key, value);
-        editor.apply();
+        // save changes
+        save(editor);
     }
 
     public void remove(String key) {
         final SharedPreferences.Editor editor = mSharedPreferences.edit();
         editor.remove(key);
-        editor.apply();
+        // save changes
+        save(editor);
     }
 
     public void clear() {
         final SharedPreferences.Editor editor = mSharedPreferences.edit();
         editor.clear();
-        editor.apply();
     }
 
     public boolean contains(String key) {
         return mSharedPreferences.contains(key);
+    }
+
+    private void save(SharedPreferences.Editor editor){
+        // use async method for SDK 9 and up
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.GINGERBREAD) {
+            editor.apply();
+        } else {
+        // use regular commit for older SDK version
+            editor.commit();
+        }
     }
 }
