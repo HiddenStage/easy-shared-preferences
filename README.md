@@ -39,7 +39,7 @@ See examples for all data types in the sample application.
 #Download
 Gradle:
 ```java
-compile 'com.hiddenstage.easysharedpreferences:library:0.1.1'
+compile 'com.hiddenstage.easysharedpreferences:library:0.1.2'
 ```
 #License
 ```
