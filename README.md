@@ -41,6 +41,15 @@ Gradle:
 ```java
 compile 'com.hiddenstage.easysharedpreferences:library:0.1.2'
 ```
+Maven:
+```java
+<dependency>
+    <groupId>com.hiddenstage.easysharedpreferences</groupId>
+    <artifactId>library</artifactId>
+    <version>0.1.1</version>
+    <type>aar</type>
+</dependency>
+```
 #License
 ```
 The MIT License (MIT)
