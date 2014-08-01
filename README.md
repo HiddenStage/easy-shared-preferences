@@ -46,7 +46,7 @@ Maven:
 <dependency>
     <groupId>com.hiddenstage.easysharedpreferences</groupId>
     <artifactId>library</artifactId>
-    <version>0.1.1</version>
+    <version>0.1.2</version>
     <type>aar</type>
 </dependency>
 ```
